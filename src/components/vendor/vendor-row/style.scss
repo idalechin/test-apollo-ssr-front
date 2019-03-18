@@ -1,0 +1,100 @@
+@import "../../../style/variables";
+
+.vendor-section{
+  margin-top:40px;
+}
+
+.vendor-row{
+
+  &__load{
+    min-height: 330px;
+  }
+
+  &__profession{
+    display: flex;
+    align-items: center;
+    margin-left: -3px;
+    position: relative;
+
+    p{
+      font-family: 'Open Sans';
+      font-weight: 700;
+    }
+  }
+
+  &__place{
+    margin-left: 20px;
+  }
+
+  &__pricing{
+    color: #000;
+    margin-right: 8px;
+  }
+
+  &__dollar-icon{
+    fill: $color-orange;
+    height: 18px;
+    width: 18px;
+  }
+
+  &__dollar-icon + &__dollar-icon{
+    margin-left: -10px;
+    position: relative;
+  }
+
+  &__info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    @media (max-width: $screen-sm) {
+      flex-wrap: wrap;
+    }
+
+    &--bottom{
+      margin: 15px 0 0;
+    }
+
+    h2{
+      margin: 0;
+    }
+  }
+
+  &__info-left{
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $screen-sm) {
+
+      .users-list__list + .users-list__list{
+        margin:0 0 0 16px ;
+      }
+    }
+
+    @media (max-width: 480px) {
+      display: block;
+
+      .users-list__list + .users-list__list{
+        margin:8px 0 0 ;
+      }
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      width: calc(100% - 36px);
+    }
+
+    h2{
+      line-height: normal;
+      margin: 0 15px 0 0;
+    }
+  }
+
+  &__title{
+    font-weight: 400;
+  }
+
+  &__title a, &__title a:hover{
+    color: $color-text;
+  }
+}

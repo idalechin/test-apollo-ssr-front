@@ -1,0 +1,53 @@
+@import "../../style/variables";
+
+.cover{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: 33px;
+  height: 33px;
+
+  &--small{
+    width: 24px;
+    height: 24px;
+  }
+
+  &--absolute{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+  }
+
+  &--margin-right{
+    margin-right: 13px;
+  }
+
+  &__empty{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: $background-empty-pale;
+
+    & > svg{
+      width: 100%;
+      height: 100%;
+      fill: $color-orange;
+    }
+  }
+
+  &__loader{
+    display:block;
+    height: 100%;
+    width: 100%;
+    fill: $color-orange;
+    stroke: $color-orange;
+  }
+}

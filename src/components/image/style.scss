@@ -1,0 +1,69 @@
+@import "../../style/variables";
+
+.image-wrapper{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-input-text;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  &__link{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    display:block;
+    z-index:1;
+  }
+
+  &__no-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-empty-pale;
+
+    svg{
+      height: 70%;
+      fill: $color-orange;
+    }
+  }
+}
+
+.image{
+
+  position:relative;
+
+  &__hidden-image{
+    display: none;
+  }
+
+  &__icon-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+
+  &__icon{
+    height: 30%;
+    fill: #ffffff;
+  }
+
+  &__body{
+    height: 100%;
+    width: 100%;
+  }
+}

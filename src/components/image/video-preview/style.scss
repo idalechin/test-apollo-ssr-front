@@ -1,0 +1,83 @@
+@import "../../../style/_variables";
+
+.video-preview{
+  height: 100%;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-left: 40px solid #ffffff;
+    border-bottom: 20px solid transparent;
+    left: calc(50% - 15px);
+    top: calc(50% - 15px);
+  }
+
+  &--loading{
+    background-color: $background-empty;
+    width: 100%;
+
+    &:after {
+      content: '';
+      border: none;
+    }
+    
+    img{
+      visibility: hidden;
+    }
+  }
+
+  &__simple-image{
+    position: relative;
+    height: 100%;
+  }
+
+  &__icon{
+    width: 100px;
+    height: 100px;
+    stroke: $color-orange;
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 50px);
+    z-index: 1;
+  }
+
+  &__error{
+    color: $color-red;
+    position: absolute;
+    padding: 0 8px;
+    bottom: 8px;
+  }
+
+  &__link{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    display:block;
+    z-index:1;
+  }
+
+  &__no-image{
+    font-size: 18px;
+    line-height:24px;
+    color:#FFF;
+    text-align: center;
+
+    span{
+      display:block;
+      width:115px;
+      position:absolute;
+      top:50%;
+      left:50%;
+    }
+
+  }
+
+}

@@ -1,0 +1,235 @@
+@import "../../../../node_modules/rc-collapse/assets/index.css";
+@import "../../../style/variables";
+
+.vendors-sidebar{
+
+  &__wrapper{
+    width: 220px;
+    max-width: 220px;
+    border-right: 1px solid $color-border;
+    position: fixed;
+    height: calc(100% - 66px);
+    overflow: auto;
+    z-index: 2;
+    background-color: $background-body;
+    padding-bottom: 0;
+    transition: padding-bottom 300ms ease-out;
+
+    &--footer{
+      padding-bottom: 46px;
+
+      @media(max-width: $screen-sm){
+        padding: 0;
+      }
+
+      @media (max-width: $screen-xs) {
+        padding-bottom: 0;
+      }
+    }
+
+    @media(max-width: $screen-sm){
+      width: 100%;
+      max-width: 100%;
+      border-right: none;
+      position: sticky;
+      left: 0;
+      right: 0;
+      top: 66px;
+      height: auto;
+      max-height: 40px;
+      transition: max-height 300ms ease-out;
+
+      &.vendors-sidebar__show{
+        max-height: 10000px;
+        height: calc(100vh - 65px);
+        overflow: auto;
+      }
+    }
+
+    .autocomplete-single__input{
+      margin: 0;
+    }
+  }
+
+  &__list{
+    margin: 0;
+    color: #ffffff;
+    padding: 0 0 8px;
+    list-style: none;
+    position: relative;
+  }
+
+  &__icon{
+    width: 44px;
+    height: 44px;
+    fill: $color-orange;
+
+    &--white{
+      fill: #ffffff;
+    }
+  }
+
+  &__button-wrapper{
+    border: none;
+    outline: none;
+    background-color: transparent;
+  }
+
+  &__filter{
+    padding: 8px 8px 7px;
+    border-bottom: 1px solid $color-border;
+    display: none;
+
+    @media(max-width: $screen-sm){
+      display: block;
+    }
+  }
+
+  &__filter-button{
+    cursor: pointer;
+    font-size: 18px;
+    align-items: center;
+    display: flex;
+  }
+
+  &__filter-icon{
+    width: 14px;
+    height: 14px;
+    fill: $color-text;
+    margin-right: 5px;
+  }
+
+  &__top{
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__separator{
+    border-top: 1px solid $color-icon-grey;
+    width: 100%;
+    display: inline-block;
+  }
+
+  &__section{
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__section-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    cursor: pointer;
+
+    &:hover{
+
+      &-arrow{
+        fill: $color-orange-hover;
+      }
+
+      &-title{
+        color: $color-orange;
+      }
+    }
+  }
+
+  &__section-arrow{
+    height: 22px;
+    width: 22px;
+    fill: $color-orange;
+    margin-right: 16px;
+    transition: transform 200ms ease;
+    transform: rotate(-180deg);
+
+    @media (max-width: $screen-sm) {
+      margin-left: 3px;
+    }
+
+    &.open{
+      transform: rotate(0deg);
+    }
+  }
+
+  &__section-title{
+    color: $color-text;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 60px;
+    text-transform: none;
+    margin: 0;
+  }
+
+  &__item{
+    font-size: 21px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 6px 8px 6px 0;
+  }
+
+  &__state-toggle{
+    position: absolute;
+    top: 315px;
+    height: 60px;
+    width: 100%;
+    background-color: $background-body;
+    color: $color-text;
+    line-height: 48px;
+    cursor: pointer;
+    font-weight: 700;
+
+    &.open{
+      position: relative;
+      top: auto;
+    }
+  }
+
+  &__radio-group-title{
+    color: $color-text;
+    margin: 24px 0 8px;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  &__list{
+    & .rc-collapse-item > .rc-collapse-header .arrow{
+      display: none;
+    }
+
+    & .rc-collapse-item > .rc-collapse-header{
+      color: $color-text-pale;
+      font-weight: 700;
+      transition: border-left 400ms ease, color 200ms ease;
+      border-left: 3px solid $background-body;
+
+      &:hover{
+        color: $color-text;
+      }
+    }
+
+    & .rc-collapse-item-active > .rc-collapse-header{
+      color: $color-text;
+      border-left: 3px solid $color-orange;
+    }
+
+    & .rc-collapse{
+      border: none;
+      background-color: $background-body;
+      border-radius: 0;
+    }
+
+    & .rc-collapse > .rc-collapse-item{
+      border: none;
+    }
+
+    & .rc-collapse-content > .rc-collapse-content-box{
+      margin: 0;
+    }
+  }
+
+  &__radio{
+    margin-bottom: 8px;
+  }
+
+}

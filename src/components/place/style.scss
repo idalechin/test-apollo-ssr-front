@@ -1,0 +1,30 @@
+@import "../../style/variables";
+
+.place{
+
+  display: flex;
+  align-items: center;
+  height: 22px;
+  position: relative;
+  right: 3px;
+
+  &__icon{
+    fill: $color-text;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    margin-right: 2px;
+  }
+
+  span{
+    width: 100%;
+    max-width: 100%;
+  }
+
+  & > span{
+    display: block;
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    position: relative;
+  }
+}

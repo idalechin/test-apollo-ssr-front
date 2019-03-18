@@ -1,0 +1,152 @@
+@import "../../style/variables";
+
+.video-wrapper{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background-color: $background-modal;
+  max-width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &--hide-bar{
+    .w-bottom-bar{
+      display: none !important;
+    }
+  }
+
+  &--full-size{
+    .w-video-wrapper{
+      display: flex !important;
+      justify-content: center !important;
+
+      video{
+        width: auto !important;
+        height: 100% !important;
+      }
+    }
+
+    [data-handle=thumbnail] {
+      img { 
+        height: 100%  !important;
+        width: auto  !important;
+        border-width: 0 !important;
+        left: 50% !important;
+        transform: translate(-50%, 0) !important;
+      }
+    }
+  }
+
+  &__link{
+    position:absolute;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    display:block;
+    z-index:1;
+  }
+
+  [data-testid = 'big-play-button__horizontally-centered-contents']{
+    height: 80px !important;
+    width: 80px !important;
+  }
+
+  [data-testid = 'big-play-button__button'] {
+    height: 80px !important;
+    width: 80px !important;
+    background: url('/images/ic_play_circle_filled_white_48dp_2x.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    top: 0 !important;
+    opacity: 0.8;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  [data-testid = 'small-play-button__horizontally-centered-contents']{
+    height: 24px !important;
+    width: 24px !important;
+  }
+
+  [data-testid = 'small-play-button__button'] {
+    height: 24px !important;
+    width: 24px !important;
+    background: url('/images/ic_play_circle_filled_white_24dp_1x.png') !important;
+    background-repeat: no-repeat !important;
+    background-size: contain !important;
+    top: 0 !important;
+    opacity: 0.9;
+
+    &:hover{
+      opacity: 1;
+    }
+  }
+
+  .w-vulcan-icon-wrapper{
+    svg{
+      fill: $color-text !important;
+      // transition: fill 300ms ease;
+    }
+
+    path, line, rect, polyline{
+      stroke: $color-text !important;
+      // transition: stroke 300ms ease;
+    }
+  }
+
+  .w-vulcan-button-wrapper button{
+    background-color: rgba(255,255,255,1) !important;
+    transition: background-color 300ms ease;
+
+    &:hover{
+      background-color: $color-text !important;
+
+      .w-vulcan-icon-wrapper{
+        svg{
+          fill: #ffffff !important;
+        }
+    
+        path, line, rect, polyline{
+          stroke: #ffffff !important;
+        }
+      }
+    }
+  }
+
+  .w-big-play-button{
+    height: 80px !important;
+    width: 80px !important;
+    background-size: 80px 80px !important;
+    background: url('/images/ic_play_circle_filled_white_48dp_2x.png') no-repeat center !important;
+    opacity: 0.8;
+    transition: opacity 300ms ease;
+
+    &:hover{
+      opacity: 1;
+    }
+
+    svg{
+      display: none !important;
+    }
+  }
+
+  &__no-video{
+    font-size: 18px;
+    line-height: 24px;
+    color: $color-text;
+    text-align: center;
+    border: 1px dotted $color-text;
+
+    span{
+      display:block;
+      position:absolute;
+
+    }
+  }
+}
+

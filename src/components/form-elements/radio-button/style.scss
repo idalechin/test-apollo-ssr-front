@@ -1,0 +1,105 @@
+@import "../../../style/_variables";
+@import "../../../style/bourbon/_bourbon";
+
+.styled-radio-btn{
+  position: relative;
+  display:flex;
+  font-size:15px;
+  color:#000;
+  text-transform: none;
+  padding-left: 24px;
+  cursor:pointer;
+  align-items: center;
+  margin-bottom: 16px;
+
+  input[type=radio]{
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+
+  }
+
+  &.disabled{
+    opacity:.5;
+    cursor:default;
+  }
+
+  &:hover{
+    .styled-radio-btn__fake{
+      border:1px solid $color-orange;
+    }
+
+    &.disabled{
+      .styled-radio-btn__fake {
+        border: none;
+      }
+    }
+  }
+
+  &__fake{
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width:24px;
+    height:24px;
+    top:50%;
+    left:0;
+    margin: -12px 0 0 0;
+    box-sizing:border-box;
+    background-color: $background-input-text;
+    border:1px solid transparent;
+    border-radius: 100%;
+  }
+
+  &__fake-circle{
+    border-radius: 100%;
+    width:12px;
+    height: 12px;
+    background-color: $color-orange;
+    @include transform(scale(0));
+    will-change: -moz-transform, -webkit-transform, -ms-transform, -o-transform, transform;
+
+    @include transition-property(transform);
+    @include transition-duration(.15s);
+    @include transition-timing-function(ease-out);
+  }
+
+  &__title{
+    display:block;
+    color: $color-text;
+    font-size: 20px;
+    margin-left: 16px;
+
+    @media (max-width: $screen-xs) {
+      font-size:16px;
+    }
+  }
+
+  &--small{
+    .styled-radio-btn__fake{
+      width:16px;
+      height:16px;
+      margin: -8px 0 0 0;
+    }
+
+    .styled-radio-btn__fake-circle{
+      width:8px;
+      height: 8px;
+    }
+
+    .styled-radio-btn__title{
+      font-size: 16px;
+      margin-left: 0;
+    }
+  }
+
+  input:checked + .styled-radio-btn__fake{
+    .styled-radio-btn__fake-circle{
+      @include transition-delay(.15s);
+      @include transform(scale(1));
+    }
+  }
+
+}

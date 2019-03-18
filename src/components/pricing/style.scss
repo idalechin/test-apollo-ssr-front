@@ -1,0 +1,19 @@
+@import "../../style/variables";
+
+.pricing{
+  color: $color-orange;
+  font-weight: 900;
+
+  &--no-margin{
+    margin: 0;
+  }
+
+  &--text{
+    color: $color-text;
+  }
+
+  &--margin-left{
+    margin-right: 0;
+    margin-left: 8px;
+  }
+}

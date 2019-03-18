@@ -1,0 +1,56 @@
+@import "../../../style/variables";
+
+.vendor-card{
+	width: calc(33% - 40px);
+	display:inline-block;
+	margin:30px 20px;
+
+	&__cover{
+		position: relative;
+		height: 200px;
+		margin-bottom: 16px;
+	}
+
+	&__title{
+		font-size:20px;
+		line-height:26px;
+		margin: 0;
+		width: calc(100% - 110px);
+		max-width: calc(100% - 110px);
+
+		a{
+			display: block;
+		}
+
+		@media (max-width: $screen-xxs-sm) {
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__info{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@media (max-width: $screen-xxs-sm) {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__btn{
+		@media (max-width: $screen-xxs-sm) {
+			width: 100%;
+		}
+	}
+
+	@media (max-width: $screen-sm) {
+		width: calc(50% - 40px);
+	}
+
+	@media (max-width: $screen-xs) {
+		width: 100%;
+		margin: 0 0 40px 0;
+	}
+}

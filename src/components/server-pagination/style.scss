@@ -1,0 +1,92 @@
+@import "../../style/variables";
+
+.server-pagination{
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__control-wrapper{
+    width: 100%;
+    height: 66px;
+    align-self: flex-end;
+  }
+
+  &__control{
+    width: 100%;
+    display: flex;
+    margin: 0 auto;
+    padding: 16px 48px;
+    background-color: $background-body;
+    border-top: 1px solid $color-border;
+    justify-content: center;
+
+    @media(max-width: $screen-sm){
+      padding: 16px 24px;
+    }
+  }
+
+
+  &__list{
+    width: 100%;
+    list-style: none;
+    padding: 0 0 30px;
+    margin: 0;
+
+    & > span{
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__button{
+    @media(max-width: $screen-xxs-md){
+      padding: 0 8px;
+    }
+  }
+
+  &__button + &__button{
+    margin-left: 8px;
+  }
+
+  &__button-full{
+    @media(max-width: $screen-sm){
+      display: none;
+    }
+  }
+
+  &__span{
+    margin: 0 8px;
+    color: $color-orange;
+    font-size: 20px;
+    line-height: 40px;
+  }
+}
+
+.server-pagination-appear {
+  opacity: 0.01;
+}
+
+.server-pagination-appear.server-pagination-appear-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.server-pagination-enter {
+  opacity: 0.01;
+}
+
+.server-pagination-enter.server-pagination-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.server-pagination-leave {
+  opacity: 1;
+}
+
+.server-pagination-leave.server-pagination-leave-active {
+  opacity: 0.01;
+  transition: opacity 200ms ease-in;
+}

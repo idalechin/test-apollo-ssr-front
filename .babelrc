@@ -1,0 +1,31 @@
+{
+	"plugins": [
+		"transform-class-properties",
+		"transform-async-to-generator",
+		"transform-runtime",
+    "transform-decorators-legacy",
+		"syntax-dynamic-import",
+    "universal-import"
+	],
+	"presets": [
+		"es2015",
+    "react",
+    "stage-0",
+    "stage-2",
+		[
+			"env",
+			{
+				"development": {
+					"plugins": [
+						"react-hot-loader/babel"
+					]
+				},
+				"targets": {
+					"node": "current",
+					"browsers": ["last 2 versions"]
+				}
+			},
+			
+		]
+	]
+}

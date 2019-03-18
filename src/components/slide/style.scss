@@ -1,0 +1,37 @@
+@import "../../style/variables";
+
+.slide{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $background-input-text;
+
+  .image-wrapper{
+    background-color: transparent;
+  }
+
+  &__video-icon{
+    position: absolute;
+    height: 70px;
+    width: 70px;
+    top: calc( 50% - 35px);
+    left: calc( 50% - 35px);
+    z-index: 1;
+    fill: #fff;
+  }
+
+  &__preloader-wrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    filter: blur(5);
+  }
+
+  &__image{
+    z-index: 1;
+  }
+}

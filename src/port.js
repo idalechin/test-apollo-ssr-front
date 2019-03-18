@@ -1,0 +1,6 @@
+module.exports = {
+  HTTP_API_PORT:'3021',
+  WS_API_PORT: '3020',
+  FRONT_PORT: '3000',
+  STATIC_FRONT_PORT: '3001'
+}

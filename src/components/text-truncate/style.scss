@@ -1,0 +1,51 @@
+@import "../../style/variables";
+
+.text-truncate{
+  width:100%;
+  max-width: 100%;
+  min-height: 1px;
+  position: relative;
+  background-color: #fff;
+
+  &__text-wrapper{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    right: 0;
+    max-width: 100%;
+    left: 0;
+    background-color: inherit;
+
+    div{
+      position: relative;
+      background-color: inherit;
+      z-index: 2;
+      word-wrap: break-word;
+      max-width: 100%;
+      white-space: pre-line;
+      display: block;
+      overflow: hidden;
+    } 
+  }
+
+  &__text{
+    position: relative;
+    // background-color: #ffffff;
+    z-index: 2;
+    word-wrap: break-word;
+    max-width: 100%;
+    white-space: pre-line;
+    display: inline;
+
+    &--expand{
+      z-index: 1;
+      display: block;
+    }
+  }
+
+  &__ellipsis{
+    cursor: pointer;
+    color: $color-orange;
+    font-weight: 700;
+  }
+}

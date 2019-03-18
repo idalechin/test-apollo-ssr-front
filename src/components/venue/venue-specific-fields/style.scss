@@ -1,0 +1,50 @@
+@import "../../../style/variables";
+
+.venue-specific-fields{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 500;
+
+  &__item{
+    margin: 5px 24px 5px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon{
+    fill: $color-text-grey;
+    height: 24px;
+    width: 24px;
+    margin-right: 5px;
+  }
+
+  &--not-margin{
+    margin-top: 0;
+  }
+
+  &--small{
+    margin-right: 6px;
+  }
+
+  &--medium{
+    flex-wrap: nowrap;
+    font-size: 15px;
+
+    .specific-fields__icon{
+      height: 20px;
+      width: 20px;
+    }
+
+    .specific-fields__item{
+      margin: 5px 16px 5px 0;
+    }
+  }
+
+  @media (max-width: $screen-xs) {
+    justify-content: center;
+    margin-top: 8px;
+  }
+
+}

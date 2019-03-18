@@ -1,0 +1,529 @@
+@import "../../style/variables";
+
+.vendor{
+  width: 100%;
+  padding-bottom: 30px;
+  padding-top: 24px;
+
+  &__container{
+    height: auto;
+    display: flex;
+  }
+
+  &__main{
+    width: calc(100% - 280px);
+
+    @media(max-width: $screen-sm){
+      width: 100%;
+    }
+  }
+
+  &__social-bar{
+    position: relative;
+    padding-top: 24px;
+    opacity: 1;
+    transition: opacity 300ms ease;
+
+    &.hidden{
+      opacity: 0;
+    }
+
+    @media(max-width: $screen-sm){
+      padding-top: 8px;
+    }
+  }
+
+  &__test-list{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding:0;
+  }
+
+  &__btn-wrapper{
+    margin-bottom: 16px;
+  }
+
+  &__test-image{
+    width: 32%;
+    padding-bottom:25%;
+    display:block;
+    background-size: cover;
+    background-position:center;
+    flex: none;
+    margin-bottom:25px;
+
+    @media(max-width: $screen-sm){
+      width:48%;
+    }
+  }
+
+  &__row{
+    display: flex;
+  }
+
+  &__cover-image{
+    padding-top: 280px;
+    width: 100%;
+    position: relative;
+    @media(max-width: $screen-sm){
+      padding:0;
+      height:250px;
+    }
+  }
+
+  &__title{
+    margin: 0;
+
+    @media (max-width: $screen-xs) {
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  &__desc{
+    margin: 24px 0 16px;
+    width: 100%;
+
+    @media (max-width: $screen-lg) {
+      margin: 24px 0 0;
+      width: calc(100% - 185px);
+    }
+
+    @media (max-width: $screen-xs) {
+      margin: 24px 0 0;
+      width: 100%;
+    }
+  }
+
+  &__info{
+    display: flex;
+    width: 100%;
+    position: relative;
+
+    @media (max-width: $screen-xs) {
+      padding-top:30px;
+    }
+
+    @media (max-width: $screen-xs) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__pricing{
+    margin-right: 8px;
+    color: $color-text;
+  }
+
+  &__category{
+    font-weight: 700;
+  }
+
+  &__desc-blocks{
+    display: flex;
+    margin-bottom: 16px;
+    justify-content: space-between;
+
+    @media (max-width: $screen-sm) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__desc-block{
+    justify-content: space-between;
+    flex: 1 1 auto;
+    max-width: 100%;
+
+    @media (max-width: $screen-xxs-md) {
+      justify-content: center;
+    }
+
+    &--list{
+      justify-content: flex-end;
+    }
+
+    &--buttons{
+      margin-left: 40px;
+      flex: 1 1 240px;
+      width: 240px;
+      min-width: 240px;
+      max-width: 240px;
+
+      @media (max-width: $screen-md) {
+        width: 200px;
+        min-width: 200px;
+        max-width: 200px;
+      }
+
+      @media (max-width: $screen-sm) {
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+      }
+
+      @media (max-width: $screen-sm) {
+        justify-content: center;
+      }
+    }
+  }
+
+
+  &__userpic{
+    height: 200px;
+    width: 200px;
+    background-color: #ffffff;
+    border-radius: 3px;
+    position: relative;
+    flex-shrink:0;
+    border: 5px solid #FFF;
+    margin: 24px 35px 32px 0;
+    flex-grow:0;
+
+    @media (max-width: $screen-lg) {
+      height: 160px;
+      width: 160px;
+      margin: 20px 20px 32px 0;
+    }
+
+    @media (max-width: $screen-xs) {
+      top: auto;
+      width: 160px;
+      height: 160px;
+      left: calc(50% - 80px);
+      margin: 0;
+    }
+
+    .avatar{
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  &__avatar-image{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 4px;
+  }
+
+  &__info-list{
+    list-style: none;
+    margin: 0 0 16px;
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+
+  &__info-item{
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .vendor__info-item + .vendor__info-item{
+    margin-left: 24px;
+    position: relative;
+
+    &:before{
+      content: '';
+      position: absolute;
+      border-left: 2px solid $color-separator;
+      height: 20px;
+      left: -12px;
+    }
+  }
+
+  &__text{
+    height: auto;
+
+    &--bold{
+      font-weight: 700;
+    }
+    &--orange{
+      color: $color-orange;
+    }
+    &--margin-left{
+      margin-left: 8px;
+    }
+    &--pointer{
+      cursor: pointer;
+
+      &:hover{
+        color: $color-orange-hover;
+      }
+    }
+  }
+
+  &__trigger{
+    cursor: pointer;
+    color: $color-blue-dark;
+    text-decoration: underline;
+
+    &:hover{
+      color: $color-blue;
+    }
+  }
+
+  &__place{
+    font-weight: 700;
+
+    @media (max-width: $screen-lg) {
+      flex: 1 1 100%;
+      margin: 6px  0 0;
+      padding: 0;
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      border-left: 0;
+      padding: 0;
+      margin: 16px 0 0;
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+
+  &--border-left{
+    padding-left: 16px;
+    margin-left: 16px;
+    border-left: 2px solid $color-border;
+
+    @media (max-width: $screen-lg) {
+      flex: 1 1 100%;
+      margin: 6px  0 0;
+      padding: 0;
+      border-left: none;
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      border-left: 0;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+  }
+
+  &__rating{
+    @media (max-width: $screen-xs) {
+      border-left: 0;
+      padding: 0;
+      margin: 16px 0 0;
+      flex: 1 1 100%;
+    }
+
+    @media (max-width: $screen-lg) {
+      flex: 1 1 100%;
+      margin: 6px  0 0;
+      padding: 0;
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      justify-content: center;
+    }
+  }
+
+  &__desc-icons{
+    display: flex;
+    align-items: center;
+  }
+
+  &__desc-icon{
+    height: 24px;
+    width: 24px;
+
+    &--green{
+      fill: $color-green;
+    }
+
+    &--orange{
+      fill: $color-orange;
+    }
+
+    &--red{
+      fill: $color-red;
+    }
+  }
+
+  &__desc-icon + &__desc-icon{
+    margin-left: 8px;
+  }
+
+  &__desc-row{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+
+    @media (max-width: $screen-lg) {
+      flex-wrap: wrap;
+    }
+
+    &--align-center{
+      align-items: center;
+    }
+
+    &--flex-start{
+      justify-content: flex-start;
+
+      @media (max-width: $screen-xs) {
+        flex-wrap: wrap;
+      }
+
+      @media (max-width: $screen-xxs-md) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__desc-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+  }
+
+  &__desc-item{
+    height: 48px;
+    width: 240px;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    border-bottom: 1px solid $color-border-modal;
+
+    &:first-child{
+      border-top:1px solid $color-border-modal;
+    }
+  }
+
+  &__about{
+    line-height:24px;
+    position: relative;
+
+    p{
+      @media (max-width: $screen-xxs-md) {
+        text-align: center;
+      }
+    }
+  }
+
+  &__about-truncated{
+    position: absolute;
+    z-index: 3;
+    background-color: $background-body;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  &__about-not-truncated{
+    position: relative;
+    z-index: 2;
+  }
+
+  &__weddings-list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+
+    @media (max-width: $screen-sm) {
+      justify-content: center;
+    }
+  }
+
+  &__wedding-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    height: 200px;
+    width: 24%;
+    flex-wrap: wrap;
+    cursor: pointer;
+    margin: 0 0 20px 1%;
+    position: relative;
+
+    @media (max-width: $screen-md) {
+      margin: 0 20px 20px 0;
+      width: calc(30% - 20px);
+    }
+
+    @media (max-width: $screen-sm) {
+      width: calc(50% - 20px);
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      margin: 0 0 20px;
+      height: 160px;
+      width: 100%;
+    }
+
+    &:hover{
+      .vendor__wedding-hover{
+        opacity: 1;
+      }
+    }
+
+    a{
+      flex-wrap: wrap;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      align-content: center;
+      height: 100%;
+      width: 100%;
+    }
+
+    &--add{
+      border: 1px solid $color-orange;
+
+      &:hover{
+        border: 1px solid $color-orange-hover;
+
+        .vendor__wedding-text{
+          color: $color-orange-hover;
+        }
+
+        .vendor__wedding-icon{
+          fill: $color-orange-hover;
+        }
+      }
+    }
+  }
+
+  &__wedding-link{
+    position: relative;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__wedding-hover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: $color-slide-hover;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    padding: 7px;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.04s linear;
+  }
+
+  &__rating{
+    margin-left: 0;
+
+    .vendor--border-left{
+      margin-top: 0;
+      padding-left: 16px;
+      margin-left: 16px;
+      border-left: 2px solid $color-border;
+      flex: 0;
+    }
+  }
+}
+
+

@@ -1,0 +1,29 @@
+@import "../../style/variables";
+
+.stars{
+  display: flex;
+  position: relative;
+  align-items: center;
+  right: 3px;
+
+  &__single{
+    display: flex;
+    position: relative;
+    align-items: center;
+  }
+
+  &__rate{
+    margin-left: 2px;
+    color: $color-text;
+  }
+}
+
+.star{
+  height: 23px;
+  width: 23px;
+  fill: $color-orange;
+
+  &--grey{
+    fill: $color-text-grey;
+  }
+}

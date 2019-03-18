@@ -1,0 +1,29 @@
+#Deps
+node_modules/
+build/
+
+#Public files
+public/
+uploads/
+tmp/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editors and IDEs
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Misc
+.DS_Store
+proccess.json
+
+
+#Configs
+src/config/env/development.js

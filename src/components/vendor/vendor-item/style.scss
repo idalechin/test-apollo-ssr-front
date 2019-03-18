@@ -1,0 +1,93 @@
+@import "../../../style/variables";
+
+.vendor-item{
+
+  width: 100%;
+
+  &:hover{
+    .vendor-item__empty{
+      border: 1px dotted $color-orange-hover;
+      color: $color-orange-hover;
+    }
+  }
+
+  &__load{
+    min-height: 230px;
+  }
+
+  &__author{
+    margin: 0;
+    color: $color-text;
+  }
+
+  &__reviews{
+    color: $color-orange;
+    margin-left: 6px;
+
+    .review-count{
+      margin: 0;
+      color: $color-orange;
+    }
+  }
+
+  &__mosaic-cover {
+    width: 100%;
+    height: 320px;
+    position: relative;
+
+    @media (max-width: $screen-sm) {
+      height: 260px;
+    }
+
+    @media (max-width: $screen-xs) {
+      height: 300px;
+    }
+  }
+
+  &__status{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 8px 16px 0 0 ;
+  }
+
+  &__mosaic-body{
+    position: relative;
+    height: 320px;
+    width: 100%;
+    min-width: 100%;
+    display: block;
+
+    @media (max-width: $screen-md) {
+      height: 220px;
+    }
+  }
+
+  &__info{
+    display: flex;
+    margin-bottom: 16px;
+    align-items: center;
+    flex-wrap:wrap;
+  }
+
+  &__info-wrapper{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  &__money{
+    margin: 0 0 0 6px;
+    border-left: 1px solid $color-border;
+    padding-left: 6px;
+  }
+
+  &__users-list{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__users{
+    margin-top: 8px;
+  }
+}

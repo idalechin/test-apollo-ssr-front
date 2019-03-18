@@ -1,0 +1,215 @@
+@import "../../../style/variables";
+
+.venues-item{
+  width: 100%;
+
+  &__load{
+    min-height: 250px;
+  }
+
+  &__slide{
+    width: 100%;
+    max-width: 100%;
+    cursor: pointer;
+    height: 260px;
+  }
+
+  &__slide-border{
+    height: 100%;
+    border: 1px solid $color-orange;
+  }
+
+  &__icon{
+    fill: $color-icon-grey;
+    height:24px;
+    width: 24px;
+
+    &--home{
+      margin: 0 8px 0 16px;
+    }
+  }
+
+  &__user-image{
+    position: relative;
+    height: 24px;
+    width: 24px;
+  }
+
+  &__approximately{
+    margin: 0 3px;
+  }
+
+  &__group{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: $color-text;
+  }
+
+  &__cover {
+    width: 100%;
+    height: 260px;
+    position: relative;
+  }
+
+  &__list{
+    display: flex;
+  }
+
+  &__list + &__list{
+    margin-left: 16px;
+  }
+
+  &__list-title{
+    margin-right: 8px;
+  }
+
+  &__users{
+    display: flex;
+  }
+
+  &__users + &__users {
+    margin-right: 8px;
+  }
+
+  &__user-image{
+    margin-right: 3px;
+  }
+
+  &__collection-title{
+    display: flex;
+    margin: 0;
+    align-items: center;
+
+    .pricing{
+      margin-right: 4px;
+      font-size: 18px;
+    }
+  }
+
+  &__lists{
+    display: flex;
+
+    @media (max-width: $screen-lg) {
+      flex: 1 1 100%;
+      margin-top: 4px;
+
+      .users-list__list:first-child{
+        margin: 0;
+        padding: 0;
+        border-left: none;
+      }
+    }
+
+    @media (max-width: $screen-xs) {
+      flex: auto;
+      margin-top: 0;
+
+      .users-list__list:first-child{
+        border-left: 1px solid $color-border;
+        margin-left: 6px;
+        padding-left: 6px;
+      }
+    }
+
+    @media (max-width: $screen-xxs-md) {
+      flex: 1 1 100%;
+      margin-top: 4px;
+
+      .users-list__list:first-child{
+        margin: 0;
+        padding: 0;
+        border-left: none;
+      }
+    }
+
+    @media (max-width: $screen-xxs-sm) {
+      flex-wrap: wrap;
+      margin: 0;
+
+      .users-list__list{
+        padding: 0;
+        border-left: none;
+        flex: 1 1 100%;
+        margin: 6px 0 0;
+      }
+    }
+  }
+
+  &__info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__reviews{
+    margin: 0 8px;
+    line-height: 26px;
+  }
+
+  &__reviews-count{
+    margin-right: 3px;
+  }
+
+  &__separator{
+    height: 16px;
+    border-left: 1px solid $color-orange;
+    margin: 0 8px;
+  }
+
+  &__hired-count{
+    background-color: $color-orange;
+    color: #ffffff;
+    height: 24px;
+    line-height: 24px;
+    padding: 0 6px;
+  }
+
+  &__arrow-icon{
+    width: 26px;
+    height: 26px;
+    border-top: 2px solid #ffffff;
+    border-right: 2px solid #ffffff;
+    display: block;
+    margin: 0;
+
+    &--left{
+      transform: rotate(45deg);
+      left: 10px;
+      position: relative;
+    }
+
+    &--right{
+      transform: rotate(225deg);
+      right: -25px;
+      position: relative;
+    }
+  }
+
+  .slick-slider{
+    margin-bottom: 16px;
+  }
+
+  &__info-wrapper{
+    margin-top: 8px;
+  }
+
+  &__specific-fields{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  &__mosaic-card{
+    position: relative;
+    height: 260px;
+    width: 100%;
+    min-width: 100%;
+    display: block;
+
+    @media (max-width: $screen-sm) {
+      height: 200px;
+    }
+  }
+}

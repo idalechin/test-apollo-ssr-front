@@ -1,0 +1,100 @@
+// Color
+
+$color-orange: #dd943b;
+$color-orange-spinner: rgba(221, 148, 59, 1) 10%, rgba(221, 148, 59, 0) 42%;
+$color-orange-hover: #fcb940;
+$color-orange-active: #c57c1b;
+$color-orange-pale: rgba(252, 185, 64, 0.1);
+$color-placeholder: #d5d2d4;
+$color-text: #4f5068;
+$color-text-pale: rgba(79, 80, 104, 0.80);
+$color-border: #f4f1ef;
+$color-border-btn: #e7e0da;
+$color-border-btn-hover: #c7c2bd;
+$color-border-modal: #f0ece9;
+$color-icon-grey: #cbcbd2;
+$color-text-grey: #cbcbd2;
+$color-text-grey-hover: #a1a1a7;
+$primary-color: #01C3A7;
+$secondary-color: #21314D;
+$color-separator: #cec1b7;
+$color-empty: #42658A;
+$color-red: #db5461;
+$color-red-hover: #f45462;
+$color-red-active: #b43e48;
+$color-green: #4DBD95;
+$color-green-hover: #7FCAAB;
+$color-green-active: #1B9E73;
+$color-blue: #76c6f7;
+$color-blue-dark: #55B8F6;
+$color-slide-hover: rgba(0,0,0,0.25);
+$color-tile-hover-dark: rgba(0,0,0,0.4);
+$color-facebook: #3B5998;
+$color-facebook-hover: #4873bf;
+$color-facebook-active: #384b87;
+$color-twitter: #00aced;
+$color-twitter-hover: #1DA1F2;
+$color-pinterest: #BD081C;
+$color-pinterest-hover: #AA2529;
+$color-linkedin: #0077b5;
+$color-linkedin-hover: #00a0dc;
+$color-foursquare: #0732a2;
+$color-foursquare-hover: #2d5be3;
+$color-buffer: #323b43;
+$color-buffer-hover: #5e6671;
+$color-yelp: #d32323;
+$color-yelp-hover: #a71c1c;
+$color-search-hover: rgba(247,241,234, 1);
+$color-message: rgb(228, 228, 232);
+
+// Background
+
+$background-modal: #34353c;
+$background-body: #ffffff;
+$background-input-text: #f5f3f1;
+$background-orange: #FEF1E2;
+$background-read: #F9F8F6;
+$background-message: #E3E3E7;
+$background-my-message: #505367;
+$background-empty: rgba(0,0,0,0.1);
+$background-empty-pale: rgba(0,0,0,0.05);
+
+// Logo
+$color-logo-dark: #209e72;
+$color-logo-mid: #4dbd94;
+$color-logo-light: #78d6af;
+
+  // Sliders
+
+$slider-arrow-white: rgba(255,255,255,0.6);
+$slider-arrow-white-hover: rgba(255,255,255,0.8);
+$slider-arrow-black: rgba(0,0,0,0.6);
+$slider-arrow-black-hover: rgba(0,0,0,0.8);
+
+//Border
+
+$br: 4px;
+
+// Media queries helpers
+$screen-xxs: 320px;
+
+$screen-xxs-sm: 480px;
+$screen-xxs-sm-max: $screen-xxs-sm - 1px;
+
+$screen-xxs-md: 600px;
+$screen-xxs-md-max: $screen-xxs-md - 1px;
+
+$screen-xs: 768px;
+$screen-xs-max: $screen-xs - 1px;
+
+$screen-sm: 992px;
+$screen-sm-max: $screen-sm - 1px;
+
+$screen-md: 1200px;
+$screen-md-max: $screen-md - 1px;
+
+$screen-lg: 1380px;
+$screen-lg-max: $screen-lg - 1px;
+
+$screen-xlg: 1580px;
+$screen-xlg-max: $screen-xlg - 1px;
