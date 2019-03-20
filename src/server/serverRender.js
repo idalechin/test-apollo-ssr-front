@@ -4,11 +4,11 @@ import routes from "../routes";
 import React from "react";
 import ReactDOM from "react-dom/server";
 import { Router } from "react-router";
+import createHistory from "history/createMemoryHistory";
 
 import { clearChunks, flushChunkNames } from "react-universal-component/server";
 import flushChunks from "webpack-flush-chunks";
 import Html from "../containers/Html";
-import history from "../history";
 
 import ApolloClient from "apollo-client";
 import { ApolloProvider, renderToStringWithData } from "react-apollo";
@@ -24,12 +24,7 @@ import clientConfigProd from "../../webpack/client.prod";
 const outputPathDev = clientConfigDev.output.path;
 const outputPathProd = clientConfigProd.output.path;
 
-const {
-	API_HOST,
-	HTTP_API_PORT,
-	FRONT_PORT,
-	STATIC_FRONT_PORT
-} = require("../port");
+const { HTTP_API_PORT } = require("../port");
 
 import { errorLink, queryOrMutationLink } from "./links";
 
@@ -57,6 +52,8 @@ const authLink = setContext((_, { headers }) => {
 });
 
 export default ({ clientStats }) => (req, res, next) => {
+	const history = createHistory({ initialEntries: [req.path] });
+
 	const client = new ApolloClient({
 		ssrMode: true,
 		link: authLink.concat(ApolloLink.from(links)),
@@ -77,12 +74,21 @@ export default ({ clientStats }) => (req, res, next) => {
 
 	renderToStringWithData(component, initialState)
 		.then(content => {
-			clearChunks();
-			const { Js, Styles, cssHash, publicPath } = flushChunks(clientStats, {
-				chunkNames: flushChunkNames(),
+			// clearChunks();
+			const chunkNames = flushChunkNames();
+			const {
+				Js,
+				Styles,
+				cssHash,
+				publicPath,
+				scripts,
+				stylesheets
+			} = flushChunks(clientStats, {
+				chunkNames,
 				outputPath:
 					process.env.NODE_ENV === "production" ? outputPathProd : outputPathDev
 			});
+
 			const htmlProps = {
 				Js,
 				Styles,
@@ -91,6 +97,11 @@ export default ({ clientStats }) => (req, res, next) => {
 				content,
 				publicPath
 			};
+
+			// console.log("DYNAMIC CHUNK NAMES RENDERED", chunkNames);
+			// console.log("SCRIPTS SERVED", scripts);
+			// console.log("STYLESHEETS SERVED", stylesheets);
+
 			res.status(200);
 			const html = <Html {...htmlProps} />;
 			res.send(`<!doctype html>\n${ReactDOM.renderToStaticMarkup(html)}`);

@@ -1,7 +1,7 @@
 import canUseDom from 'can-use-dom'
+import createMemoryHistory from 'history/createMemoryHistory';
+import createBrowserHistory from 'history/createBrowserHistory';
 
-if (canUseDom) {
-  module.exports = require('./history/browser');
-} else {
-  module.exports = require('./history/server');
-}
+const history = canUseDom ? createBrowserHistory() : createMemoryHistory()
+
+export default history

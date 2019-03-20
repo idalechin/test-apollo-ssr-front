@@ -80,7 +80,9 @@ module.exports = {
 	},
 	plugins: [
 		new WriteFilePlugin(),
-		new ExtractCssChunks(),
+		new ExtractCssChunks({
+			orderWarning: true
+		}),
 		new webpack.NamedModulesPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
 		new webpack.NoEmitOnErrorsPlugin(),

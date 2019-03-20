@@ -1,49 +1,37 @@
-import React from 'react'
-import universal from 'react-universal-component';
-import Loader from './components/loader'
-import notFound from './components/notFound'
-import App from './App'
-
-const defaultOptions = {
-  onError: error => {
-    console.log('Router error: ', error);
-    return null
-  },
-  // minDelay: 300,
-  loading: Loader,
-  error: notFound,
-  // ignoreBabelRename: true
-}
+import React from "react";
+import App from "./App";
+import UniversalComponent from "./UniversalComponent";
 
 export default [
-  { component: universal(import('./App'), defaultOptions),
-    routes: [
-      {
-        path: '/',
-        key: 'home',
-        exact: true,
-        component: universal(import('./containers/Home'), defaultOptions)
-      },
-      {
-        path: '/vendors/:page',
-        key: 'vendors',
-        component: universal(import('./containers/vendors/index'), defaultOptions),
-      },
-      {
-        path: '/venues/:page',
-        key: 'venues',
-        component: universal(import('./containers/venues'), defaultOptions),
-      },
-      {
-        path: '/vendor/:slug',
-        key: 'vendor',
-        component: universal(import('./containers/Vendor'), defaultOptions),
-      },
-      {
-        path: '/signin',
-        key: 'signin',
-        component: universal(import('./containers/signin-page'), defaultOptions),
-      },
-    ]
-  }
+	{
+		component: App,
+		routes: [
+			{
+				path: "/",
+				key: "home",
+				exact: true,
+				component: () => <UniversalComponent page={() => import(`./containers/Home`)} />
+			},
+			{
+				path: "/vendors/:page",
+				key: "vendors",
+				component: () => <UniversalComponent page={() => import(`./containers/vendors`)} />
+			},
+			{
+				path: "/venues/:page",
+				key: "venues",
+				component: () => <UniversalComponent page={() => import(`./containers/venues`)} />
+			},
+			{
+				path: "/vendor/:slug",
+				key: "vendor",
+				component: () => <UniversalComponent page={() => import(`./containers/Vendor`)} />
+			},
+			{
+				path: "/signin",
+				key: "signin",
+				component: () => <UniversalComponent page={() => import(`./containers/signin-page`)} />
+			}
+		]
+	}
 ];

@@ -90,7 +90,9 @@ module.exports = {
 		}
 	},
 	plugins: [
-		new ExtractCssChunks(),
+		new ExtractCssChunks({
+			orderWarning: true
+		}),
 		new webpack.optimize.ModuleConcatenationPlugin(),
 		new webpack.optimize.OccurrenceOrderPlugin(),
 		new webpack.DefinePlugin({

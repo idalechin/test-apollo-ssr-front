@@ -34,8 +34,7 @@ const Venues = ({ match }) => {
 		variables: {
 			offset,
 			limit
-		},
-		fetchPolicy: "cache-and-network"
+		}
 	});
 	const vendors = _get(vendorsQuery, "data.vendors.list", []);
 	const pagination = _get(vendorsQuery, "data.vendors.pagination");

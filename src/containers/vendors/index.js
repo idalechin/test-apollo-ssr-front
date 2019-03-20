@@ -14,44 +14,6 @@ import ServerPagination from "../../components/server-pagination";
 
 import "./style.scss";
 
-const FETCH_CATEGORY = gql`
-	query {
-		category {
-			id
-			category
-		}
-	}
-`;
-
-const FETCH_VENDORS = gql`
-	query vendors(
-		$sortBy: String
-		$category: [String]
-		$price: [Int]
-		$distance: [Int]
-		$offset: Int
-		$limit: Int
-	) {
-		vendors(
-			sortBy: $sortBy
-			category: $category
-			price: $price
-			distance: $distance
-			offset: $offset
-			limit: $limit
-		) {
-			id
-			list {
-				id
-				slug
-			}
-			pagination {
-				pageCount
-			}
-		}
-	}
-`;
-
 const useRefreshPage = args => {
 	useEffect(() => {
 		history.push("/vendors/1");
@@ -132,5 +94,43 @@ const Vendors = props => {
 		</div>
 	);
 };
+
+const FETCH_CATEGORY = gql`
+	query {
+		category {
+			id
+			category
+		}
+	}
+`;
+
+const FETCH_VENDORS = gql`
+	query vendors(
+		$sortBy: String
+		$category: [String]
+		$price: [Int]
+		$distance: [Int]
+		$offset: Int
+		$limit: Int
+	) {
+		vendors(
+			sortBy: $sortBy
+			category: $category
+			price: $price
+			distance: $distance
+			offset: $offset
+			limit: $limit
+		) {
+			id
+			list {
+				id
+				slug
+			}
+			pagination {
+				pageCount
+			}
+		}
+	}
+`;
 
 export default Vendors;
