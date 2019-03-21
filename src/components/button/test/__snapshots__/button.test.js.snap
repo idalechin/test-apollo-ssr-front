@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Test Button renders right 1`] = `
+exports[`<Button /> Test renders right 1`] = `
 <button
-  className="btn btn-test  "
+  className="btn btn-test  disabled"
   onClick={[Function]}
 >
   <svg

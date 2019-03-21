@@ -18,7 +18,7 @@ import { ApolloLink } from "apollo-link";
 import { setContext } from "apollo-link-context";
 import fetch from "node-fetch";
 import { createPersistedQueryLink } from "apollo-link-persisted-queries";
-import { getID } from "../util/inMemory";
+import { getID } from "../utils/inMemory";
 import clientConfigDev from "../../webpack/client.dev";
 import clientConfigProd from "../../webpack/client.prod";
 const outputPathDev = clientConfigDev.output.path;

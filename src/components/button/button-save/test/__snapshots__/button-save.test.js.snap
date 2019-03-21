@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<SaveButton /> Test renders right 1`] = `
+<button
+  className="btn btn-test btn--secondary-border btn--icon btn--like btn--small-like  "
+  onClick={[Function]}
+>
+  <svg
+    className="btn__icon"
+    viewBox="undefined"
+  >
+    <use
+      xlinkHref="#undefined"
+    />
+  </svg>
+  <span
+    className="btn__text"
+  />
+</button>
+`;
