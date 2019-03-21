@@ -6,7 +6,7 @@ import routes from "./routes";
 import history from "./history";
 import fetch from "node-fetch";
 import _get from "lodash/get";
-import { getID } from "./util/inMemory";
+import { getID } from "./utils/inMemory";
 import Cookies from "js-cookie";
 
 import ApolloClient from "apollo-client";

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PropTypes from 'prop-types';
 import { useMutation, useQuery } from "react-apollo-hooks";
 import gql from "graphql-tag";
 import _get from "lodash/get";
@@ -9,7 +10,7 @@ import FlagIcon from "./ic_turned_in_black_24px.svg";
 
 import "../style.scss";
 
-export default props => {
+const SaveButton = props => {
   const { type, id, size } = props;
 	const className = props.className ? props.className : "";
 	const border = props.border ? "btn--secondary-border" : "";
@@ -45,7 +46,17 @@ export default props => {
 	);
 };
 
-const TOGGLE_VENDOR_SAVE = gql`
+SaveButton.propTypes = {
+  type: PropTypes.string.isRequired,
+	id: PropTypes.string.isRequired,
+	className: PropTypes.string,
+	size: PropTypes.string,
+	border: PropTypes.bool
+};
+
+export default SaveButton;
+
+export const TOGGLE_VENDOR_SAVE = gql`
 	mutation toogleVendorSave ($id: ID!) {
 		toogleVendorSave(id: $id){
       id
@@ -54,7 +65,7 @@ const TOGGLE_VENDOR_SAVE = gql`
 	}
 `;
 
-const VENDOR_IS_SAVED = gql`
+export const VENDOR_IS_SAVED = gql`
 	query vendorIsSaved ($id: ID!) {
 		vendorIsSaved(id: $id) {
 			id
